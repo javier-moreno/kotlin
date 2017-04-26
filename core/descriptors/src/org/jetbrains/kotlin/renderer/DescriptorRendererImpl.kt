@@ -1048,8 +1048,8 @@ internal class DescriptorRendererImpl(
             renderFunction(descriptor, builder)
         }
 
-        override fun visitReceiverParameterDescriptor(descriptor: ReceiverParameterDescriptor, data: StringBuilder) {
-            throw UnsupportedOperationException("Don't render receiver parameters")
+        override fun visitReceiverParameterDescriptor(descriptor: ReceiverParameterDescriptor, builder: StringBuilder) {
+            builder.append(descriptor.name) // renders <this>
         }
 
         override fun visitConstructorDescriptor(constructorDescriptor: ConstructorDescriptor, builder: StringBuilder) {
